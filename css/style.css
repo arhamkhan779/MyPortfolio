@@ -318,7 +318,7 @@ section {
 .projects { overflow:hidden; }
 .projects-container { position:relative; overflow:hidden; padding:1rem 0; }
 .projects-viewport { overflow:hidden; padding:1rem 0; perspective:1200px; }
-.projects-track { display:flex; gap:1.2rem; align-items:center; will-change:transform; }
+.projects-track { display:flex; gap:1.2rem; align-items:center; will-change:transform; transform: translateZ(0); }
 .project-card { 
     flex: 0 0 380px; 
     background: linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01)); 
@@ -408,7 +408,7 @@ section {
 /* Services Carousel */
 .services { overflow:hidden; }
 .services-viewport { overflow:hidden; padding:1rem 0; perspective:1200px; }
-.services-track { display:flex; gap:1.2rem; align-items:stretch; will-change:transform; }
+.services-track { display:flex; gap:1.2rem; align-items:stretch; will-change:transform; transform: translateZ(0); }
 .service-card { 
     flex: 0 0 320px; 
     background: linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01)); 
@@ -452,7 +452,7 @@ section {
 /* Skills */
 .skills { overflow:hidden; }
 .skills-viewport { overflow:hidden; padding:1rem 0; perspective:1200px; }
-.skills-track { display:flex; gap:1rem; align-items:center; will-change:transform; }
+.skills-track { display:flex; gap:1rem; align-items:center; will-change:transform; transform: translateZ(0); }
 .skill-card { 
     flex: 0 0 280px; 
     background: linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01)); 
@@ -540,6 +540,7 @@ section {
     align-items: center;
     will-change: transform;
     min-height: 280px;
+    transform: translateZ(0);
 }
 
 .contact-card {
