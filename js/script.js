@@ -32,15 +32,21 @@ function initNavigation() {
         });
     });
     
-    // Navbar background on scroll
+    // Navbar background on scroll - throttled
+    let scrollTimeout;
     window.addEventListener('scroll', function() {
+        if (scrollTimeout) return;
+        scrollTimeout = true;
+        
         const navbar = document.querySelector('.navbar');
         if (window.scrollY > 50) {
             navbar.classList.add('scrolled');
         } else {
             navbar.classList.remove('scrolled');
         }
-    });
+        
+        setTimeout(() => { scrollTimeout = false; }, 100);
+    }, { passive: true });
 }
 
 // Scroll Animations
@@ -470,7 +476,7 @@ function initProjectSlider() {
         // Duplicate only once to create A A pattern
         track.innerHTML = track.innerHTML + track.innerHTML;
 
-        let speed = 0.45; // px per frame (adjust for faster/slower)
+        let speed = 0.3; // reduced from 0.45 for better performance
         let pos = 0;
         let paused = false;
 
